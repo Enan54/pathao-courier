@@ -1,0 +1,25 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('migration_table_name_table', function (Blueprint $table) {
+            $table->id();
+            $table->string('client_id');
+            $table->string('client_secret');
+            $table->string('username')->comment('username/email');
+            $table->string('password');
+            $table->string('store_id');
+            $table->string('store_name');
+            $table->text('token');
+            $table->text('refresh_token');
+            $table->string('expires_in');
+            $table->timestamps();
+        });
+    }
+};
